@@ -1,11 +1,17 @@
 import React from 'react';
 import './App.css';
+import Jokes from "./components/Jokes"
+import JokesData from "./components/JokesData"
+
 
 function App() {
+  const jokeElements = JokesData.map(jokes => {
+    return <Jokes setup={jokes.setup} punchine={jokes.punchline} />
+  }) 
   return (
-    <main>
-      React⚛️ + Vite⚡ + Replit🌀
-    </main>
+    <div>
+      {jokeElements}
+    </div>
   );
 }
 
